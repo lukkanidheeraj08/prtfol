@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Lukkani Dheeraj | Developer Portfolio</title>
+
+  <meta
+    name="description"
+    content="Portfolio of Lukkani Dheeraj, a Computer Science student and aspiring web developer."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --background: #050505;
+      --background-light: #0b0b0b;
+      --glass: rgba(255, 255, 255, 0.07);
+      --glass-light: rgba(255, 255, 255, 0.11);
+      --border: rgba(255, 255, 255, 0.14);
+      --text: #f5f5f5;
+      --muted: #a1a1aa;
+      --green: #a3ff12;
+      --green-dark: #78bd00;
+      --purple: #9d7aff;
+      --cyan: #4deeea;
+      --shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(163, 255, 18, 0.09), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(157, 122, 255, 0.1), transparent 27%),
+        radial-gradient(circle at 50% 90%, rgba(77, 238, 234, 0.06), transparent 25%),
+        var(--background);
+      font-family: "Inter", sans-serif;
+      line-height: 1.6;
+    }
+
+    body::before {
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      opacity: 0.15;
+      pointer-events: none;
+      content: "";
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 45px 45px;
+      mask-image: linear-gradient(to bottom, black, transparent);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1150px, 90%);
+      margin: auto;
+    }
+
+    .glass {
+      border: 1px solid var(--border);
+      background: var(--glass);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    /* Navigation */
+
+    nav {
+      position: fixed;
+      z-index: 1000;
+      top: 18px;
+      right: 0;
+      left: 0;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 22px;
+      border-radius: 18px;
+    }
+
+    .logo {
+      color: var(--green);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .logo span {
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      min-height: 100vh;
+      align-items: center;
+      padding: 130px 0 80px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 25px;
+      padding: 8px 14px;
+      border: 1px solid rgba(163, 255, 18, 0.3);
+      border-radius: 999px;
+      color: var(--green);
+      background: rgba(163, 255, 18, 0.08);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.8rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 15px var(--green);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.75);
+      }
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      margin-bottom: 20px;
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.98;
+      letter-spacing: -5px;
+    }
+
+    .hero h1 .highlight {
+      color: var(--green);
+      text-shadow: 0 0 30px rgba(163, 255, 18, 0.25);
+    }
+
+    .hero-subtitle {
+      max-width: 680px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+    }
+
+    .hero-subtitle strong {
+      color: white;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 20px;
+      border: 1px solid var(--green);
+      border-radius: 10px;
+      color: #071000;
+      background: var(--green);
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      color: #071000;
+      background: white;
+      border-color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(163, 255, 18, 0.18);
+    }
+
+    .btn-outline {
+      color: var(--text);
+      background: transparent;
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      color: var(--green);
+      background: var(--glass-light);
+      border-color: var(--green);
+    }
+
+    .quick-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.82rem;
+    }
+
+    .quick-info span {
+      color: var(--green);
+    }
+
+    /* General sections */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-label {
+      margin-bottom: 10px;
+      color: var(--green);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin-bottom: 35px;
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      letter-spacing: -2px;
+    }
+
+    .section-title span {
+      color: var(--green);
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 25px;
+    }
+
+    .about-card,
+    .education-card {
+      padding: 30px;
+      border-radius: 20px;
+    }
+
+    .about-card p {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .education-card h3 {
+      margin-bottom: 12px;
+      color: var(--green);
+    }
+
+    .education-card p {
+      color: var(--muted);
+    }
+
+    .education-card .year {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      color: var(--green);
+      background: rgba(163, 255, 18, 0.09);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.75rem;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .skill-card {
+      padding: 22px 15px;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .skill-card:hover {
+      border-color: var(--green);
+      background: var(--glass-light);
+      transform: translateY(-5px);
+    }
+
+    .skill-icon {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--green);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Projects */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      position: relative;
+      display: flex;
+      min-height: 280px;
+      flex-direction: column;
+      padding: 25px;
+      overflow: hidden;
+      border-radius: 18px;
+    }
+
+    .project-number {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      color: rgba(255, 255, 255, 0.14);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .project-card h3 {
+      margin: 25px 0 10px;
+      color: var(--green);
+      font-size: 1.2rem;
+    }
+
+    .project-card p {
+      flex: 1;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 18px 0;
+    }
+
+    .tag {
+      padding: 4px 8px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.7rem;
+    }
+
+    .project-link {
+      color: var(--green);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    /* Code section */
+
+    .code-intro {
+      max-width: 700px;
+      margin-bottom: 25px;
+      color: var(--muted);
+    }
+
+    .code-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .code-card {
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .code-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 15px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .code-title {
+      color: var(--text);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.85rem;
+    }
+
+    .copy-btn {
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--green);
+      background: transparent;
+      cursor: pointer;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.72rem;
+      transition: 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      color: #071000;
+      background: var(--green);
+    }
+
+    pre {
+      min-height: 230px;
+      overflow-x: auto;
+      padding: 20px;
+      color: #d4fca4;
+      background: #080808;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.78rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+
+    /* Contact */
+
+    .contact-card {
+      padding: 45px 25px;
+      border-radius: 22px;
+      text-align: center;
+    }
+
+    .contact-card h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    .contact-card h2 span {
+      color: var(--green);
+    }
+
+    .contact-card p {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-link {
+      padding: 11px 15px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.8rem;
+      transition: 0.3s ease;
+    }
+
+    .contact-link:hover {
+      color: var(--green);
+      border-color: var(--green);
+      background: var(--glass-light);
+    }
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.78rem;
+    }
+
+    footer span {
+      color: var(--green);
+    }
+
+    /* Responsive design */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .about-grid,
+      .projects-grid,
+      .code-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quick-info {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container glass">
+      <a href="#home" class="logo">dheeraj<span>.dev</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#code">Code</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+      <div class="container hero-content">
+        <div class="status">
+          <span class="status-dot"></span>
+          Available for learning and opportunities
+        </div>
+
+        <h1>
+          Hi, I'm <span class="highlight">Dheeraj.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          I'm <strong>Lukkani Dheeraj</strong>, a Semester 3 student at
+          Sai University, Chennai. I am a coder aspiring to become a
+          professional <strong>web developer</strong>.
+        </p>
+
+        <div class="hero-buttons">
+          <a
+            href="https://github.com/lukkanidheeraj08"
+            target="_blank"
+            class="btn"
+          >
+            View GitHub →
+          </a>
+
+          <a href="#projects" class="btn btn-outline">
+            Explore Projects
+          </a>
+        </div>
+
+        <div class="quick-info">
+          <div><span>01.</span> Sai University, Chennai</div>
+          <div><span>02.</span> Semester 3</div>
+          <div><span>03.</span> Aspiring Web Developer</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <p class="section-label">01 / About me</p>
+        <h2 class="section-title">A student who loves to <span>build.</span></h2>
+
+        <div class="about-grid">
+          <div class="about-card glass">
+            <p>
+              I am Lukkani Dheeraj, a passionate coder and Computer Science
+              student currently studying at Sai University in Chennai.
+            </p>
+
+            <p>
+              I enjoy understanding how software works, solving programming
+              problems, and creating useful digital experiences. My current
+              goal is to improve my skills in web development and build
+              modern, responsive websites.
+            </p>
+
+            <p>
+              I have experience with C and Python, and I am currently learning
+              Java and HTML. I am excited to continue learning CSS, JavaScript,
+              backend development, and other technologies used in the web
+              development industry.
+            </p>
+          </div>
+
+          <div class="education-card glass">
+            <h3>Education</h3>
+
+            <p>
+              <strong>Sai University</strong><br />
+              Chennai, Tamil Nadu
+            </p>
+
+            <p style="margin-top: 15px;">
+              Currently pursuing my undergraduate studies and attending
+              Semester 3.
+            </p>
+
+            <span class="year">SEMESTER 03 / CURRENT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="container">
+        <p class="section-label">02 / Skills</p>
+        <h2 class="section-title">Technologies I'm <span>learning.</span></h2>
+
+        <div class="skills-grid">
+          <div class="skill-card glass">
+            <span class="skill-icon">C</span>
+            <p>Programming</p>
+          </div>
+
+          <div class="skill-card glass">
+            <span class="skill-icon">Py</span>
+            <p>Python</p>
+          </div>
+
+          <div class="skill-card glass">
+            <span class="skill-icon">Ja</span>
+            <p>Java Learning</p>
+          </div>
+
+          <div class="skill-card glass">
+            <span class="skill-icon">&lt;/&gt;</span>
+            <p>HTML</p>
+          </div>
+
+          <div class="skill-card glass">
+            <span class="skill-icon">Git</span>
+            <p>GitHub</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container">
+        <p class="section-label">03 / Projects</p>
+        <h2 class="section-title">Things I've <span>coded.</span></h2>
+
+        <div class="projects-grid">
+          <article class="project-card glass">
+            <span class="project-number">01</span>
+            <h3>Student Grade Calculator</h3>
+            <p>
+              A Python program that accepts marks, calculates the average, and
+              displays the student's grade.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Beginner</span>
+            </div>
+
+            <a href="#code" class="project-link">View source code →</a>
+          </article>
+
+          <article class="project-card glass">
+            <span class="project-number">02</span>
+            <h3>Number Guessing Game</h3>
+            <p>
+              A console-based Python game where the user tries to guess a
+              randomly generated number.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Game</span>
+            </div>
+
+            <a href="#code" class="project-link">View source code →</a>
+          </article>
+
+          <article class="project-card glass">
+            <span class="project-number">03</span>
+            <h3>Calculator in C</h3>
+            <p>
+              A simple calculator that performs addition, subtraction,
+              multiplication, and division.
+            </p>
+
+            <div class="tags">
+              <span class="tag">C</span>
+              <span class="tag">Logic</span>
+            </div>
+
+            <a href="#code" class="project-link">View source code →</a>
+          </article>
+
+          <article class="project-card glass">
+            <span class="project-number">04</span>
+            <h3>Student Record System</h3>
+            <p>
+              A C program that stores and displays basic student information
+              using structures.
+            </p>
+
+            <div class="tags">
+              <span class="tag">C</span>
+              <span class="tag">Structures</span>
+            </div>
+
+            <a href="#code" class="project-link">View source code →</a>
+          </article>
+
+          <article class="project-card glass">
+            <span class="project-number">05</span>
+            <h3>To-Do List Concept</h3>
+            <p>
+              A simple HTML project concept for organizing daily tasks and
+              improving productivity.
+            </p>
+
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">Web</span>
+            </div>
+
+            <a href="https://github.com/lukkanidheeraj08" target="_blank" class="project-link">
+              View GitHub profile →
+            </a>
+          </article>
+
+          <article class="project-card glass">
+            <span class="project-number">06</span>
+            <h3>More Coming Soon</h3>
+            <p>
+              I am continuously learning and will be adding more web
+              development and programming projects here.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Learning</span>
+              <span class="tag">Building</span>
+            </div>
+
+            <a href="https://github.com/lukkanidheeraj08" target="_blank" class="project-link">
+              Follow my progress →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Section -->
+    <section id="code">
+      <div class="container">
+        <p class="section-label">04 / Source code</p>
+        <h2 class="section-title">Copy. Run. <span>Learn.</span></h2>
+
+        <p class="code-intro">
+          These are some basic C and Python projects that demonstrate my
+          programming practice. Use the copy button to copy any code.
+        </p>
+
+        <div class="code-grid">
+          <!-- Python Project 1 -->
+          <div class="code-card glass">
+            <div class="code-header">
+              <span class="code-title">grade_calculator.py</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+
+            <pre><code>marks = []
+
+print("Student Grade Calculator")
+
+for i in range(1, 6):
+    mark = float(input(f"Enter mark {i}: "))
+    marks.append(mark)
+
+average = sum(marks) / len(marks)
+
+print(f"\nAverage mark: {average:.2f}")
+
+if average >= 90:
+    grade = "A"
+elif average >= 80:
+    grade = "B"
+elif average >= 70:
+    grade = "C"
+elif average >= 60:
+    grade = "D"
+else:
+    grade = "F"
+
+print(f"Grade: {grade}")</code></pre>
+          </div>
+
+          <!-- Python Project 2 -->
+          <div class="code-card glass">
+            <div class="code-header">
+              <span class="code-title">number_guessing.py</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+
+            <pre><code>import random
+
+secret_number = random.randint(1, 100)
+attempts = 0
+
+print("Guess a number between 1 and 100")
+
+while True:
+    guess = int(input("Enter your guess: "))
+    attempts += 1
+
+    if guess < secret_number:
+        print("Too low. Try again.")
+    elif guess > secret_number:
+        print("Too high. Try again.")
+    else:
+        print(f"Correct! You won in {attempts} attempts.")
+        break</code></pre>
+          </div>
+
+          <!-- Python Project 3 -->
+          <div class="code-card glass">
+            <div class="code-header">
+              <span class="code-title">simple_calculator.py</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+
+            <pre><code>num1 = float(input("Enter first number: "))
+operator = input("Enter operator (+, -, *, /): ")
+num2 = float(input("Enter second number: "))
+
+if operator == "+":
+    result = num1 + num2
+elif operator == "-":
+    result = num1 - num2
+elif operator == "*":
+    result = num1 * num2
+elif operator == "/" and num2 != 0:
+    result = num1 / num2
+else:
+    result = "Invalid operation"
+
+print("Result:", result)</code></pre>
+          </div>
+
+          <!-- C Project 1 -->
+          <div class="code-card glass">
+            <div class="code-header">
+              <span class="code-title">calculator.c</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    float first, second;
+    char operator;
+
+    printf("Enter first number: ");
+    scanf("%f", &amp;first);
+
+    printf("Enter operator (+, -, *, /): ");
+    scanf(" %c", &amp;operator);
+
+    printf("Enter second number: ");
+    scanf("%f", &amp;second);
+
+    switch (operator) {
+        case '+':
+            printf("Result: %.2f\n", first + second);
+            break;
+
+        case '-':
+            printf("Result: %.2f\n", first - second);
+            break;
+
+        case '*':
+            printf("Result: %.2f\n", first * second);
+            break;
+
+        case '/':
+            if (second != 0)
+                printf("Result: %.2f\n", first / second);
+            else
+                printf("Cannot divide by zero.\n");
+            break;
+
+        default:
+            printf("Invalid operator.\n");
+    }
+
+    return 0;
+}</code></pre>
+          </div>
+
+          <!-- C Project 2 -->
+          <div class="code-card glass">
+            <div class="code-header">
+              <span class="code-title">student_record.c</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+
+            <pre><code>#include &lt;stdio.h&gt;
+
+struct Student {
+    char name[50];
+    int age;
+    float mark;
+};
+
+int main() {
+    struct Student student;
+
+    printf("Enter student name: ");
+    scanf(" %[^\n]", student.name);
+
+    printf("Enter age: ");
+    scanf("%d", &amp;student.age);
+
+    printf("Enter mark: ");
+    scanf("%f", &amp;student.mark);
+
+    printf("\n--- Student Record ---\n");
+    printf("Name: %s\n", student.name);
+    printf("Age: %d\n", student.age);
+    printf("Mark: %.2f\n", student.mark);
+
+    return 0;
+}</code></pre>
+          </div>
+
+          <!-- C Project 3 -->
+          <div class="code-card glass">
+            <div class="code-header">
+              <span class="code-title">factorial.c</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int number;
+    long long factorial = 1;
+
+    printf("Enter a positive number: ");
+    scanf("%d", &amp;number);
+
+    if (number &lt; 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+    } else {
+        for (int i = 1; i &lt;= number; i++) {
+            factorial *= i;
+        }
+
+        printf("Factorial of %d = %lld\n",
+               number, factorial);
+    }
+
+    return 0;
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card glass">
+          <p class="section-label">05 / Contact</p>
+
+          <h2>Let's build something <span>great.</span></h2>
+
+          <p>
+            I am always interested in learning, collaborating, and exploring
+            new opportunities in programming and web development.
+          </p>
+
+          <div class="contact-links">
+            <a
+              class="contact-link"
+              href="mailto:dheeraj.l-29@scds.saiuniversity.edu.in"
+            >
+              Email Me
+            </a>
+
+            <a
+              class="contact-link"
+              href="https://github.com/lukkanidheeraj08"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+
+            <a class="contact-link" href="#home">
+              Back to top ↑
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>
+        Designed and coded by <span>Lukkani Dheeraj</span> · 2026
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function copyCode(button) {
+      const code = button
+        .closest(".code-card")
+        .querySelector("code")
+        .innerText;
+
+      navigator.clipboard.writeText(code).then(() => {
+        const originalText = button.innerText;
+        button.innerText = "Copied!";
+
+        setTimeout(() => {
+          button.innerText = originalText;
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>
